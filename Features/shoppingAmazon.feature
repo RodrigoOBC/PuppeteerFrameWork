@@ -4,9 +4,9 @@ Feature: Manage shopping cart
 
 Scenario: Add product at shopping car 
     Given I am oline at Amazon Page
-    When I search for "Batman o longo dia das Bruxas"
+    When I search for "Batman - O Longo Dia das Bruxas - Edição Definitiva"
     And I add "HQ" at shopping car
-    Then I should see "Batman o longo dia das Bruxas" in shopping cart 
+    Then I should see "Batman - O Longo Dia das Bruxas - Edição Definitiva" in shopping cart 
 
 # Scenario: Remove product from shopping cart 
 #     Given I am inside the shopping cart 

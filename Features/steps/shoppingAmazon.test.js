@@ -5,32 +5,29 @@ let AmaozonPage = require("../page/AmazonPage");
 page = ''
 AmazonPage = ''
 
-Before(async function () {
+BeforeAll(async function () {
     AmazonPage = new AmaozonPage()
     browser = await puppeteer.launch({ headless: false ,defaultViewport: null, args: ['--start-maximized']  })
-    page = await browser.newPage()
+	page = await browser.newPage()
     await page.setViewport({ width: 1366, height: 768});
 })
 
 
 Given(/^I am oline at Amazon Page$/, async () => {
     await AmazonPage.goTo(page,"https://www.amazon.com.br/")
-	return true;
 });
 
-When(/^I search for "([^"]*)"$/, (args1) => {
-	console.log(args1);
-	return true;
+When(/^I search for "([^"]*)"$/, async  (args1) => {
+	await AmazonPage.searchProducts(page,args1)
 });
 
-When(/^I add "([^"]*)" at shopping car$/, (args1) => {
-	console.log(args1);
-	return true;
+When(/^I add "([^"]*)" at shopping car$/, async  (args1) => {
+	await AmazonPage.addProduct(page,args1)
+	await AmazonPage.goCart(page)
 });
 
-Then(/^I should see "([^"]*)" in shopping cart$/, (args1) => {
-	console.log(args1);
-	return true;
+Then(/^I should see "([^"]*)" in shopping cart$/, async  (args1) => {
+	await AmazonPage.checkProducts(page,args1)
 });
 
 
