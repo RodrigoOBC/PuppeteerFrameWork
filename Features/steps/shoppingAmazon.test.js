@@ -1,5 +1,20 @@
+const { When, Then, Given, Before,BeforeAll,After,AfterAll } = require("cucumber")
+const puppeteer = require("puppeteer")
+let AmaozonPage = require("../page/AmazonPage");
 
-Given(/^I am oline at Amazon Page$/, () => {
+page = ''
+AmazonPage = ''
+
+Before(async function () {
+    AmazonPage = new AmaozonPage()
+    browser = await puppeteer.launch({ headless: false ,defaultViewport: null, args: ['--start-maximized']  })
+    page = await browser.newPage()
+    await page.setViewport({ width: 1366, height: 768});
+})
+
+
+Given(/^I am oline at Amazon Page$/, async () => {
+    await AmazonPage.goTo(page,"https://www.amazon.com.br/")
 	return true;
 });
 
@@ -17,7 +32,6 @@ Then(/^I should see "([^"]*)" in shopping cart$/, (args1) => {
 	console.log(args1);
 	return true;
 });
-
 
 
 Given(/^I am inside the shopping cart$/, () => {

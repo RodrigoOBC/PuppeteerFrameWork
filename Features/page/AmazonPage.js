@@ -1,3 +1,9 @@
-class AmazonPage{}
+const expect = require('chai').expect
+const puppeteer = require('puppeteer')
 
-export default AmazonPage
+module.exports = class AmazonPage{
+
+    async goTo(page,url){
+        await page.goto(url)
+    }
+}
