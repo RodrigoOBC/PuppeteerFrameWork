@@ -19,15 +19,14 @@ module.exports = class AmazonPage {
 
     async addProduct(page, product) {
 
-
-        await page.waitForXPath('//span[text()="Batman - O Longo Dia das Bruxas - Edição Definitiva"]')
-        const elements = await page.$x('//span[text()="Batman - O Longo Dia das Bruxas - Edição Definitiva"]')
+        await page.waitForXPath('//span[text()="'+product+'"]')
+        const elements = await page.$x('//span[text()="'+product+'"]')
         await elements[0].click()
         // await page.click('//span[text()="Batman - O Longo Dia das Bruxas - Edição Definitiva"]')
         await page.waitForXPath('//*[@id="productTitle"]')
         let element = await page.$x('//*[@id="productTitle"]')
         let value = await page.evaluate(el => el.textContent, element[0])
-        expect('\n' + product + '\n').to.equal(value)
+        expect(' '+product+' ').to.equal(value)
         await page.click("#add-to-cart-button")
     }
 
@@ -41,9 +40,9 @@ module.exports = class AmazonPage {
 
     async checkProducts(page, product) {
 
-        await page.waitForXPath('//span[@class="a-truncate-full a-offscreen"]')
-        element = await page.$x('//span[@class="a-truncate-full a-offscreen"]')
-        value = await page.evaluate(el => el.textContent, element[0])
+        await page.waitForXPath('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
+        let element = await page.$x('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
+        let value = await page.evaluate(el => el.textContent, element[0])
         expect(product).to.equal(value)
 
     }

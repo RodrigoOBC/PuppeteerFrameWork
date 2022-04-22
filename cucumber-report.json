@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2027000000
+              "duration": 2257000000
             }
           },
           {
@@ -39,21 +39,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1632000000
+              "duration": 1986000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "I add \"HQ\" at shopping car",
+            "name": "I add \"Batman - O Longo Dia das Bruxas - Edição Definitiva\" at shopping car",
             "match": {
               "location": "features\\steps\\shoppingAmazon.test.js:24"
             },
             "result": {
-              "status": "failed",
-              "duration": 13000000,
-              "error_message": "TypeError: Cannot read property 'click' of undefined\n    at AmazonPage.addProduct (C:\\Users\\rodrigo.cabral\\Documents\\Projetos\\Pupputer\\PuppeteerFrameWork\\features\\page\\AmazonPage.js:25:27)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async World.<anonymous> (C:\\Users\\rodrigo.cabral\\Documents\\Projetos\\Pupputer\\PuppeteerFrameWork\\features\\steps\\shoppingAmazon.test.js:25:2)"
+              "status": "passed",
+              "duration": 2324000000
             }
           },
           {
@@ -65,7 +64,8 @@
               "location": "features\\steps\\shoppingAmazon.test.js:29"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 1046000000
             }
           }
         ]
