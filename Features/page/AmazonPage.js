@@ -38,7 +38,7 @@ module.exports = class AmazonPage {
 
     }
 
-    async checkProducts(page, product) {
+    async checkProduct(page, product) {
 
         await page.waitForXPath('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
         let element = await page.$x('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
@@ -46,4 +46,5 @@ module.exports = class AmazonPage {
         expect(product).to.equal(value)
 
     }
+    
 }

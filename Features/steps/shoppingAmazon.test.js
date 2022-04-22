@@ -12,6 +12,12 @@ BeforeAll(async function () {
     await page.setViewport({ width: 1366, height: 768});
 })
 
+After(async function () {
+	await page.close()
+    page = await browser.newPage()
+	
+	
+})
 
 Given(/^I am oline at Amazon Page$/, async () => {
     await AmazonPage.goTo(page,"https://www.amazon.com.br/")
@@ -27,16 +33,18 @@ When(/^I add "([^"]*)" at shopping car$/, async  (args1) => {
 });
 
 Then(/^I should see "([^"]*)" in shopping cart$/, async  (args1) => {
-	await AmazonPage.checkProducts(page,args1)
+	await AmazonPage.checkProduct(page,args1)
 });
 
 
-Given(/^I am inside the shopping cart$/, () => {
-	return true;
+Given(/^I am inside the shopping cart$/, async () => {
+	await AmazonPage.goCart(page)
 });
 
-Then(/^There are at least two differents products in the shopping cart$/, () => {
-	return true;
+Given(/^There are at least two differents products in the shopping cart$/, async () => {
+	await AmazonPage.goTo(page,"https://www.amazon.com.br/")
+	await AmazonPage.searchProducts(page,"DC Graphic Novels. Superman. Brainiac")
+	await AmazonPage.addProduct(page,"DC Graphic Novels. Superman. Brainiac")
 });
 
 When(/^I remove the first product$/, () => {
