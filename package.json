@@ -1,25 +1,26 @@
 {
-  "name": "puppeteer",
+  "name": "puppeteerframework",
   "version": "1.0.0",
-  "description": "Framework Puppeter",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "set NODE_ENV=test&& mocha --timeout=30000 tests"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "chai": "^4.3.4",
-    "expect-puppeteer": "^6.0.0",
-    "mocha": "^9.1.3",
-    "prettier": "^2.4.1",
-    "puppeteer": "^11.0.0",
-    "puppeteer-core": "^11.0.0",
-    "puppeteer-cucumber-js": "^1.6.1"
+    "chai": "^4.3.6",
+    "cucumber": "^6.0.7",
+    "cucumber-html-reporter": "^5.5.0",
+    "puppeteer": "^13.6.0"
   },
-  "keywords": [
-    "Puppeteer",
-    "Mocha",
-    "Chai"
-  ]
+  "devDependencies": {},
+  "scripts": {
+    "test": "cucumber-js -f json:cucumber-report.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodrigoOBC/PuppeteerFrameWork.git"
+  },
+  "author": "CabralSJM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RodrigoOBC/PuppeteerFrameWork/issues"
+  },
+  "homepage": "https://github.com/RodrigoOBC/PuppeteerFrameWork#readme"
 }
