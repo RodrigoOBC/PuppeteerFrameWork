@@ -17,17 +17,6 @@
         "type": "scenario",
         "steps": [
           {
-            "keyword": "Before",
-            "hidden": true,
-            "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:8"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1145000000
-            }
-          },
-          {
             "arguments": [],
             "keyword": "Given ",
             "line": 6,
@@ -37,46 +26,46 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2746000000
+              "duration": 2257000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 7,
-            "name": "I search for \"Batman o longo dia das Bruxas\"",
+            "name": "I search for \"Batman - O Longo Dia das Bruxas - Edição Definitiva\"",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:21"
+              "location": "features\\steps\\shoppingAmazon.test.js:20"
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1986000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "I add \"HQ\" at shopping car",
+            "name": "I add \"Batman - O Longo Dia das Bruxas - Edição Definitiva\" at shopping car",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:26"
+              "location": "features\\steps\\shoppingAmazon.test.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 2324000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "I should see \"Batman o longo dia das Bruxas\" in shopping cart",
+            "name": "I should see \"Batman - O Longo Dia das Bruxas - Edição Definitiva\" in shopping cart",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:31"
+              "location": "features\\steps\\shoppingAmazon.test.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1046000000
             }
           }
         ]
