@@ -14,8 +14,3 @@ Scenario: Remove product from shopping cart
     When I remove the first product 
     Then I shouldn't see product in shopping cart 
 
-# Scenario: Clean the shopping cart 
-#     Given I am inside the shopping cart 
-#     And There are at least two differents products in the shopping cart
-#     When I clean the shopping cart  
-#     Then I shouldn't see any products
