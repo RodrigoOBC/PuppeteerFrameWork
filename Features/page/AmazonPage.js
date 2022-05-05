@@ -48,5 +48,11 @@ module.exports = class AmazonPage {
         expect(product).to.equal(value)
 
     }
+
+    async removeProduct(page){
+        await page.waitForXPath('//*[@value="Excluir"][@data-action="delete"]')
+        let product = await page.$x('//*[@value="Excluir"][@data-action="delete"]')
+        await product[0].click()
+    }
     
 }

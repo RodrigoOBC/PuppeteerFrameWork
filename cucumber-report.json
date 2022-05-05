@@ -22,11 +22,11 @@
             "line": 6,
             "name": "I am oline at Amazon Page",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:25"
+              "location": "features\\steps\\shoppingAmazon.test.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 2271000000
+              "duration": 2731000000
             }
           },
           {
@@ -35,11 +35,11 @@
             "line": 7,
             "name": "I search for \"Batman - O Longo Dia das Bruxas - Edição Definitiva\"",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:29"
+              "location": "features\\steps\\shoppingAmazon.test.js:33"
             },
             "result": {
               "status": "passed",
-              "duration": 1883000000
+              "duration": 1700000000
             }
           },
           {
@@ -48,11 +48,11 @@
             "line": 8,
             "name": "I add \"Batman - O Longo Dia das Bruxas - Edição Definitiva\" at shopping car",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:33"
+              "location": "features\\steps\\shoppingAmazon.test.js:37"
             },
             "result": {
               "status": "passed",
-              "duration": 2692000000
+              "duration": 2134000000
             }
           },
           {
@@ -61,18 +61,18 @@
             "line": 9,
             "name": "I should see \"Batman - O Longo Dia das Bruxas - Edição Definitiva\" in shopping cart",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:38"
+              "location": "features\\steps\\shoppingAmazon.test.js:42"
             },
             "result": {
               "status": "passed",
-              "duration": 955000000
+              "duration": 1060000000
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:21"
+              "location": "features\\steps\\shoppingAmazon.test.js:22"
             },
             "result": {
               "status": "passed",
@@ -95,11 +95,11 @@
             "line": 12,
             "name": "There are at least two differents products in the shopping cart",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:42"
+              "location": "features\\steps\\shoppingAmazon.test.js:46"
             },
             "result": {
               "status": "passed",
-              "duration": 2337000000
+              "duration": 2111000000
             }
           },
           {
@@ -108,11 +108,11 @@
             "line": 13,
             "name": "I am inside the shopping cart",
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:47"
+              "location": "features\\steps\\shoppingAmazon.test.js:52"
             },
             "result": {
               "status": "passed",
-              "duration": 3431000000
+              "duration": 4327000000
             }
           },
           {
@@ -120,8 +120,12 @@
             "keyword": "When ",
             "line": 14,
             "name": "I remove the first product",
+            "match": {
+              "location": "features\\steps\\shoppingAmazon.test.js:58"
+            },
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 624000000
             }
           },
           {
@@ -129,19 +133,23 @@
             "keyword": "Then ",
             "line": 15,
             "name": "I shouldn't see product in shopping cart",
+            "match": {
+              "location": "features\\steps\\shoppingAmazon.test.js:62"
+            },
             "result": {
-              "status": "undefined"
+              "status": "pending",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features\\steps\\shoppingAmazon.test.js:21"
+              "location": "features\\steps\\shoppingAmazon.test.js:22"
             },
             "result": {
               "status": "passed",
-              "duration": 73000000
+              "duration": 1000000
             }
           }
         ]
