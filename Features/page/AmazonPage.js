@@ -13,7 +13,9 @@ module.exports = class AmazonPage {
         await page.click('input[id="twotabsearchtextbox"]')
         await page.type('input[id="twotabsearchtextbox"]', product)
         await page.click('div[class="nav-search-submit nav-sprite"]')
-        await page.waitForXPath('//span[text()="' + product + '"]')
+        await page.waitForXPath('//span[text()="' + product + '"]', {
+            timeout: 10000
+          })
 
     }
 
@@ -38,12 +40,28 @@ module.exports = class AmazonPage {
 
     }
 
-    async checkProducts(page, product) {
+    async checkProduct(page, product) {
 
         await page.waitForXPath('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
         let element = await page.$x('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
         let value = await page.evaluate(el => el.textContent, element[0])
         expect(product).to.equal(value)
 
+    }
+
+    async removeProduct(page){
+        await page.waitForXPath('//*[@value="Excluir"][@data-action="delete"]')
+        let product = await page.$x('//*[@value="Excluir"][@data-action="delete"]')
+        await product[0].click()
+    }
+    
+    async dontSeeProduct(page,product){
+        try {
+            await page.$x('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
+            return false
+         }
+         catch (e) {
+            return true
+         }
     }
 }
