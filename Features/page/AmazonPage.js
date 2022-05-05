@@ -13,7 +13,9 @@ module.exports = class AmazonPage {
         await page.click('input[id="twotabsearchtextbox"]')
         await page.type('input[id="twotabsearchtextbox"]', product)
         await page.click('div[class="nav-search-submit nav-sprite"]')
-        await page.waitForXPath('//span[text()="' + product + '"]')
+        await page.waitForXPath('//span[text()="' + product + '"]', {
+            timeout: 10000
+          })
 
     }
 
