@@ -55,4 +55,13 @@ module.exports = class AmazonPage {
         await product[0].click()
     }
     
+    async dontSeeProduct(page,product){
+        try {
+            await page.$x('//span[@class="a-truncate-full a-offscreen"][text()="'+product+'"]')
+            return false
+         }
+         catch (e) {
+            return true
+         }
+    }
 }

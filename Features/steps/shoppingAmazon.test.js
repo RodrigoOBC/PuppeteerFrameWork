@@ -1,3 +1,4 @@
+const { expect } = require("chai");
 const { When, Then, Given, Before, BeforeAll, After, AfterAll } = require("cucumber")
 const puppeteer = require("puppeteer")
 let AmaozonPage = require("../page/AmazonPage");
@@ -20,7 +21,12 @@ BeforeAll(async function () {
 })
 
 After(async function () {
+	page.close()
 	page = await browser.newPage()
+})
+
+AfterAll(async function () {
+	await browser.close()
 })
 
 Given(/^I am oline at Amazon Page$/, async () => {
@@ -56,7 +62,7 @@ When('I remove the first product', async () => {
 	await AmazonPage.removeProduct(page)
 });
 
-Then('I shouldn\'t see product in shopping cart', function () {
-	// Write code here that turns the phrase above into concrete actions
-	return 'pending';
+Then('I shouldn\'t see product in shopping cart', async () => {
+	var result = await AmazonPage.dontSeeProduct(page,"DC Graphic Novels. Superman. Brainiac")
+	await expect(result).true
 });
